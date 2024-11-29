@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cuenta Regresiva | USA Visa</title>
+    <title>USA Visa Countdown</title>
     <style>
         * {
             margin: 0;
@@ -25,12 +25,13 @@
             align-items: center;
             background: linear-gradient(135deg, var(--usa-blue), var(--usa-red));
             color: var(--white);
-            overflow: hidden;
+            overflow-x: hidden;
             position: relative;
+            padding: 40px 0;
         }
 
         .background-slideshow {
-            position: absolute;
+            position: fixed;
             inset: 0;
             z-index: 0;
         }
@@ -73,6 +74,7 @@
             border: 1px solid rgba(255, 255, 255, 0.2);
             padding: 40px;
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            margin-bottom: 20px;
         }
 
         .header {
@@ -123,6 +125,14 @@
             text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
         }
 
+        h2 {
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 30px;
+            color: var(--white);
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
         .details {
             display: flex;
             flex-direction: column;
@@ -154,6 +164,33 @@
             animation: pulse 2s infinite;
         }
 
+        .questions-container {
+            display: grid;
+            gap: 20px;
+        }
+
+        .question-card {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 12px;
+            padding: 20px;
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+        }
+
+        .question {
+            font-weight: bold;
+            color: var(--white);
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        .answer {
+            color: var(--white);
+            opacity: 0.9;
+            line-height: 1.4;
+        }
+
         @keyframes pulse {
             0% { transform: scale(1); }
             50% { transform: scale(1.1); }
@@ -169,20 +206,19 @@
                 padding: 15px;
             }
             .time-box span { font-size: 2.5rem; }
+            .question-card {
+                padding: 15px;
+            }
+            .question {
+                font-size: 1rem;
+            }
         }
-        .usa-flag {
-            width: 100px;
-            margin-bottom: 20px;
-        }
-
     </style>
 </head>
 <body>
     <div class="background-slideshow"></div>
-    
     <div class="container">
         <div class="card">
-           <center> <img src="https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg" alt="USA Flag" class="usa-flag"></center>
             <div class="header">
                 <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z M4 22v-7"/>
@@ -193,19 +229,19 @@
             <div class="countdown">
                 <div class="time-box">
                     <span id="days">00</span>
-                    <label>Dias</label>
+                    <label>Days</label>
                 </div>
                 <div class="time-box">
                     <span id="hours">00</span>
-                    <label>Horas</label>
+                    <label>Hours</label>
                 </div>
                 <div class="time-box">
                     <span id="minutes">00</span>
-                    <label>Minutos</label>
+                    <label>Minutes</label>
                 </div>
                 <div class="time-box">
                     <span id="seconds">00</span>
-                    <label>Segundos</label>
+                    <label>Seconds</label>
                 </div>
             </div>
 
@@ -217,14 +253,14 @@
                         <line x1="8" y1="2" x2="8" y2="6"/>
                         <line x1="3" y1="10" x2="21" y2="10"/>
                     </svg>
-                    <span>Fecha de la entrevista: 10 de febrero de 2025 - 09:15 AM</span>
+                    <span>Interview Date: February 10, 2025 - 09:15 AM</span>
                 </div>
                 <div class="detail-item">
                     <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
                         <circle cx="12" cy="10" r="3"/>
                     </svg>
-                    <span>U.S. Embassy |  Asunción - PY</span>
+                    <span>U.S. Embassy</span>
                 </div>
             </div>
 
@@ -233,10 +269,96 @@
                     <path d="M22 2L11 13"/>
                     <path d="M22 2l-7 20-4-9-9-4 20-7z"/>
                 </svg>
-                <p>Larissa Cristaldo | Mateo Cristaldo</p>
+                <p>Your American Dream Awaits</p>
                 <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
                 </svg>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Preguntas Frecuentes de la Entrevista</h2>
+            <div class="questions-container">
+                <div class="question-card">
+                    <div class="question">1. ¿Cuál es el propósito de tu visita?</div>
+                    <div class="answer">Estamos de turismo, queremos conocer Nueva York.</div>
+                </div>
+                <div class="question-card">
+                    <div class="question">2. ¿Cuánto tiempo planean quedarse?</div>
+                    <div class="answer">Planeamos quedarnos una semana.</div>
+                </div>
+                <div class="question-card">
+                    <div class="question">3. ¿Dónde se hospedarán?</div>
+                    <div class="answer">Nos hospedaremos en un Airbnb en Manhattan.</div>
+                </div>
+                <div class="question-card">
+                    <div class="question">4. ¿Tienen un boleto de regreso?</div>
+                    <div class="answer">Sí, nuestro vuelo de regreso es el 17 de febrero de 2025.</div>
+                </div>
+                <div class="question-card">
+                    <div class="question">5. ¿Cuánto dinero traen para su estancia?</div>
+                    <div class="answer">Tenemos suficiente dinero para cubrir gastos de alojamiento, comidas y actividades durante la semana.</div>
+                </div>
+                <div class="question-card">
+                    <div class="question">6. ¿Tienen seguro médico?</div>
+                    <div class="answer">Sí, tenemos seguro de viaje que cubre emergencias médicas.</div>
+                </div>
+                <div class="question-card">
+                    <div class="question">7. ¿Conocen a alguien en Estados Unidos?</div>
+                    <div class="answer">No, no conocemos a nadie, venimos solo de turismo.</div>
+                </div>
+                <div class="question-card">
+                    <div class="question">8. ¿Han visitado Estados Unidos antes?</div>
+                    <div class="answer">Sí, estuve en Wisconsin con una visa J-1.</div>
+                </div>
+                <div class="question-card">
+                    <div class="question">9. ¿Qué van a hacer durante su estancia?</div>
+                    <div class="answer">Planeamos visitar lugares turísticos como Central Park, la Estatua de la Libertad y museos.</div>
+                </div>
+                <div class="question-card">
+                    <div class="question">10. ¿Tienen familiares en Estados Unidos?</div>
+                    <div class="answer">No, no tenemos familiares aquí.</div>
+                </div>
+                <div class="question-card">
+                    <div class="question">11. ¿Por qué solo vienen por una semana?</div>
+                    <div class="answer">Tenemos compromisos en nuestro país y solo podemos tomar una semana de vacaciones.</div>
+                </div>
+                <div class="question-card">
+                    <div class="question">12. ¿Están trabajando o estudiando en su país?</div>
+                    <div class="answer">Sí, ambos tenemos nuestros trabajos/estudios en nuestro país y regresaremos al finalizar el viaje.</div>
+                </div>
+                <div class="question-card">
+                    <div class="question">13. ¿Por qué eligieron Nueva York?</div>
+                    <div class="answer">Es un destino icónico y siempre hemos querido conocer la ciudad.</div>
+                </div>
+                <div class="question-card">
+                    <div class="question">14. ¿Han excedido alguna vez el tiempo permitido de su visa?</div>
+                    <div class="answer">No, siempre hemos respetado los tiempos permitidos en nuestros viajes.</div>
+                </div>
+                <div class="question-card">
+                    <div class="question">15. ¿Cuándo fue la última vez que estuvieron en EE.UU.?</div>
+                    <div class="answer">La última vez que visité EE.UU. fue en 2023 con una visa J-1.</div>
+                </div>
+                <div class="question-card">
+                    <div class="question">16. ¿Llevan productos prohibidos o restringidos?</div>
+                    <div class="answer">No, no llevamos ningún producto prohibido.</div>
+                </div>
+                <div class="question-card">
+                    <div class="question">17. ¿Llevan más de $10,000 en efectivo?</div>
+                    <div class="answer">No, no llevamos más de esa cantidad en efectivo.</div>
+                </div>
+                <div class="question-card">
+                    <div class="question">18. ¿Van a realizar alguna actividad comercial o de negocios?</div>
+                    <div class="answer">No, solo estamos de turismo.</div>
+                </div>
+                <div class="question-card">
+                    <div class="question">19. ¿Van a visitar otras ciudades además de Nueva York?</div>
+                    <div class="answer">No, solo planeamos quedarnos en Nueva York.</div>
+                </div>
+                <div class="question-card">
+                    <div class="question">20. ¿Cuáles son sus planes después de este viaje?</div>
+                    <div class="answer">Regresar a nuestro país y continuar con nuestros compromisos laborales/estudiantiles.</div>
+                </div>
             </div>
         </div>
     </div>
